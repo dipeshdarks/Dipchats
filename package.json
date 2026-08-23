@@ -1,0 +1,41 @@
+{
+  "name": "dipchats",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Private. Realtime. Connected. — Open-source real-time chat + offline mesh messaging.",
+  "license": "MIT",
+  "author": "DipChats Contributors",
+  "scripts": {
+    "dev": "pnpm --filter @dipchats/server dev & pnpm --filter @dipchats/web dev",
+    "dev:server": "pnpm --filter @dipchats/server dev",
+    "dev:web": "pnpm --filter @dipchats/web dev",
+    "build": "pnpm -r build",
+    "build:shared": "pnpm --filter @dipchats/shared build",
+    "build:database": "pnpm --filter @dipchats/database build",
+    "build:server": "pnpm --filter @dipchats/server build",
+    "build:web": "pnpm --filter @dipchats/web build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "db:generate": "pnpm --filter @dipchats/database db:generate",
+    "db:migrate": "pnpm --filter @dipchats/database db:migrate",
+    "db:studio": "pnpm --filter @dipchats/database db:studio",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "clean": "pnpm -r exec rm -rf dist node_modules .turbo"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "prettier": "^3.3.0",
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.10",
+    "vitest": "^1.6.0",
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

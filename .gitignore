@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Test
+coverage/
+.nyc_output/
+
+# Docker
+docker/data/
+
+# Drizzle
+drizzle/meta/
+
+# Tauri
+src-tauri/target/
+
+# Temporary
+*.tmp
+*.bak
+.cache/
+
+# Opencode / GSD internal
+.agents/
+.opencode/
+.planning/
+
+# Vite temp files
+*.timestamp-*

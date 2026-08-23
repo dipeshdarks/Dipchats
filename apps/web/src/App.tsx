@@ -11,6 +11,7 @@ import { PeopleList } from './components/PeopleList';
 import { UserProfileView } from './components/UserProfileView';
 import { DMView } from './components/DMView';
 import { SearchOverlay } from './components/SearchOverlay';
+import { updateSEO } from './services/seo';
 import { Folder } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -19,6 +20,12 @@ export const App: React.FC = () => {
   useEffect(() => {
     initSession();
   }, []);
+
+  useEffect(() => {
+    if (isJoined) {
+      updateSEO(activeTab);
+    }
+  }, [isJoined, activeTab]);
 
   if (!isJoined) {
     return <JoinScreen />;

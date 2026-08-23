@@ -1,0 +1,53 @@
+# DipChats - Robots.txt
+# https://dipchats.vercel.app
+
+User-agent: *
+Allow: /
+
+# Disallow private/authenticated paths
+Disallow: /api/
+Disallow: /ws
+Disallow: /health
+
+# Sitemap
+Sitemap: https://dipchats.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, polite crawling)
+# Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: bingbot
+Allow: /
+
+# Social Media Crawlers
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# AI Crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /

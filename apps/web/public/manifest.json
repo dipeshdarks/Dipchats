@@ -1,0 +1,23 @@
+{
+  "name": "DipChats",
+  "short_name": "DipChats",
+  "description": "Real-time chat for people, communities, and conversations. Private, secure, and free.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F14",
+  "theme_color": "#0B0F14",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["communication", "social"],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

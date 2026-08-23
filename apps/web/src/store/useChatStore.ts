@@ -101,7 +101,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
 
     set({ isLoading: true });
     try {
-      const res = await fetch('/api/v1/auth/me', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/v1/auth/me`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const text = await res.text();
@@ -503,8 +503,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
     const token = get().token;
     if (!token) return;
     try {
-      const res = await fetch('/api/v1/channels', {
-        method: 'POST',
+      const res = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/v1/channels`, {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
           name: `dm_${get().currentUser?.id}_${userId}`,

@@ -27,7 +27,9 @@ export async function createServer() {
 
   // Register Core Middleware Plugins
   await fastify.register(cors, {
-    origin: true,
+    origin: process.env.CORS_ORIGIN
+      ? process.env.CORS_ORIGIN.split(',').map((o: string) => o.trim())
+      : ['http://localhost:3000', 'http://localhost:5173'],
     credentials: true
   });
 

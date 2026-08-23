@@ -229,7 +229,12 @@ export const Sidebar: React.FC = () => {
 
         <div className="p-3 border-t border-dipBorder flex items-center justify-between text-xs bg-dipBg/50">
           <div className="flex items-center gap-2 overflow-hidden">
-            <div className="w-2 h-2 rounded-full bg-dipSuccess animate-pulse" />
+            <div
+              className={`w-2 h-2 rounded-full animate-pulse ${
+                isConnected ? 'bg-dipSuccess' : 'bg-dipDanger'
+              }`}
+              title={isConnected ? 'Connected' : 'Reconnecting...'}
+            />
             <span className="truncate font-medium text-dipText">{currentUser?.displayName}</span>
           </div>
           <button

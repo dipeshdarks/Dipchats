@@ -24,8 +24,8 @@ export const SettingsView: React.FC = () => {
         currentUser: {
           ...currentUser!,
           displayName: updated.displayName,
-          username: updated.username,
-          bio: updated.bio
+          username: updated.username ?? undefined,
+          bio: updated.bio ?? undefined
         }
       });
       setEditing(false);

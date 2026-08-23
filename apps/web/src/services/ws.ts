@@ -17,9 +17,14 @@ class WebSocketClient {
     this.token = token;
     if (onStateChange) this.onStateChangeCb = onStateChange;
 
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const host = window.location.host;
-    const wsUrl = `${protocol}//${host}/ws`;
+    let wsUrl: string;
+    if (import.meta.env.VITE_WS_URL) {
+      wsUrl = import.meta.env.VITE_WS_URL;
+    } else {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const host = window.location.host;
+      wsUrl = `${protocol}//${host}/ws`;
+    }
 
     this.ws = new WebSocket(wsUrl);
 

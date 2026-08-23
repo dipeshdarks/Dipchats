@@ -219,6 +219,8 @@ export type WSEventType =
   | 'block.removed'
   | 'people.discover'
   | 'people.presence'
+  | 'sync.request'
+  | 'sync.response'
   | 'error';
 
 export interface WSFrame<T = unknown> {

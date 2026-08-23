@@ -11,7 +11,9 @@ const envSchema = z.object({
   MINIO_ACCESS_KEY: z.string().default('dipchats_minio'),
   MINIO_SECRET_KEY: z.string().default('dipchats_minio_secret'),
   MINIO_BUCKET: z.string().default('dipchats'),
-  MINIO_USE_SSL: z.coerce.boolean().default(false)
+  MINIO_USE_SSL: z.coerce.boolean().default(false),
+  CORS_ORIGIN: z.string().optional(),
+  SESSION_SECRET: z.string().default('change-me-in-production-use-a-real-secret')
 });
 
 export const config = envSchema.parse(process.env);
